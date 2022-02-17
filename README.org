@@ -3,6 +3,8 @@ Manage file tags using extended attributes in GNU/Emacs
 
 [[./dired-tags.png]]
 
+[[./dired-tags-editor.png]]
+
 * Overview
 Add, remove, list and edit tag files using extended attributes.  It is based on
 [[https://github.com/xFA25E/xattr][xattr]] library.
@@ -10,11 +12,14 @@ Add, remove, list and edit tag files using extended attributes.  It is based on
 * Usage
 #+begin_src elisp
 (with-eval-after-load 'dired
-  (define-key dired-mode-map (kbd "C-c C-t C-a") #'dired-tags-add)
-  (define-key dired-mode-map (kbd "C-c C-t C-r") #'dired-tags-remove)
-  (define-key dired-mode-map (kbd "C-c C-t C-l") #'dired-tags-list)
-  (define-key dired-mode-map (kbd "C-c C-t C-m") #'dired-tags-mark-regexp)
-  (define-key dired-mode-map (kbd "C-c C-t C-e") #'dired-tags-edit))
+  (easy-mmode-defmap dired-tags-map
+      '(("\C-a" . dired-tags-add)
+        ("\C-r" . dired-tags-remove)
+        ("\C-l" . dired-tags-list)
+        ("\C-m" . dired-tags-mark-regexp)
+        ("\C-e" . dired-tags-edit))
+      "Dired tags commands.")
+  (define-key dired-mode-map "\C-c\C-t" dired-tags-map))
 #+end_src
 
 * License
