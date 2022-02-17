@@ -12,14 +12,7 @@ Add, remove, list and edit tag files using extended attributes.  It is based on
 * Usage
 #+begin_src elisp
 (with-eval-after-load 'dired
-  (easy-mmode-defmap dired-tags-map
-      '(("\C-a" . dired-tags-add)
-        ("\C-r" . dired-tags-remove)
-        ("\C-l" . dired-tags-list)
-        ("\C-m" . dired-tags-mark-regexp)
-        ("\C-e" . dired-tags-edit))
-      "Dired tags commands.")
-  (define-key dired-mode-map "\C-c\C-t" dired-tags-map))
+  (define-key dired-mode-map "\C-c\C-t" 'dired-tags-prefix-map))
 #+end_src
 
 * License
