@@ -85,14 +85,18 @@ Return TAGS."
 (defun dired-tags--add (tag file)
   "Add TAG to FILE.
 Return FILE tags."
-  (thread-first (cons tag (dired-tags--list file))
-    (cl-delete-duplicates :test #'string=)
-    (dired-tags--save file)))
+  (let ((tags (dired-tags--list file)))
+    (if (cl-find tag tags :test #'string=)
+        tags
+      (dired-tags--save (cons tag tags) file))))
 
 (defun dired-tags--remove (tag file)
   "Remove TAG from FILE.
 Return FILE tags."
-  (dired-tags--save (delete tag (dired-tags--list file)) file))
+  (let ((tags (dired-tags--list file)))
+    (if (cl-find tag tags :test #'string=)
+        (dired-tags--save (cl-delete tag tags :test #'string=) file)
+      tags)))
 
 (defun dired-tags--format-tags (tags)
   "Return a propertized string with TAGS suitable for display."
