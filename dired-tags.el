@@ -167,7 +167,9 @@ ARG is the same as in `dired-map-over-marks'."
   (interactive)
   (when-let ((widget dired-tags-edit-widget))
     (dired-tags--save
-     (cl-delete-duplicates (widget-value widget) :test #'string=)
+     (cl-delete-duplicates
+      (cl-delete-if #'string-empty-p (widget-value widget))
+      :test #'string=)
      (widget-get widget :file)))
   (dired-tags-edit-quit))
 
