@@ -200,7 +200,7 @@ ARG is the same as in `dired-map-over-marks'."
       (goto-char (point-min))
       (pop-to-buffer (current-buffer)))))
 
-;;;###autoload
+;;;###autoload (autoload 'dired-tags-prefix-map "dired-tags" nil nil 'keymap)
 (define-prefix-command 'dired-tags-prefix-map)
 
 (easy-mmode-define-keymap
