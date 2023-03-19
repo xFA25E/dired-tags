@@ -5,7 +5,7 @@
 ;; Author: Valeriy Litkovskyy <vlr.ltkvsk@protonmail.com>
 ;; Keywords: data, files
 ;; Version: 0.0.1
-;; Package-Requires: ((emacs "25.1") (xattr "0.0.3"))
+;; Package-Requires: ((emacs "27.1") (xattr "0.0.3"))
 ;; URL: https://github.com/xFA25E/dired-tags
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -34,7 +34,7 @@
 (require 'xattr)
 
 (defgroup dired-tags nil
-  "Dired tags"
+  "Dired tags."
   :group 'dired)
 
 (defcustom dired-tags-xattr-namespace
@@ -107,7 +107,7 @@ Return FILE tags."
   (propertize file 'face 'dired-tags-file-face))
 
 (defun dired-tags--action (action &optional arg)
-  "Apply ACTION on every marked dired file.
+  "Apply ACTION on every marked Dired file.
 ACTION is a function that takes a file as an argument and returns
 file tags.  Display file tags at the end for every file.
 
@@ -123,14 +123,14 @@ ARG is the same as in `dired-map-over-marks'."
 
 ;;;###autoload
 (defun dired-tags-list (&optional arg)
-  "Display tags of marked dired files.
+  "Display tags of marked Dired files.
 ARG is the same as in `dired-map-over-marks'."
   (interactive "P")
   (dired-tags--action #'dired-tags--list arg))
 
 ;;;###autoload
 (defun dired-tags-add (tag &optional arg)
-  "Add TAG to marked dired files.
+  "Add TAG to marked Dired files.
 ARG is the same as in `dired-map-over-marks'."
   (interactive "sTag to add: \nP")
   (cl-assert (not (string-empty-p tag)) nil "Tag must not be empty")
@@ -138,7 +138,7 @@ ARG is the same as in `dired-map-over-marks'."
 
 ;;;###autoload
 (defun dired-tags-remove (tag &optional arg)
-  "Remove TAG from marked dired files.
+  "Remove TAG from marked Dired files.
 ARG is the same as in `dired-map-over-marks'."
   (interactive "sTag to remove: \nP")
   (cl-assert (not (string-empty-p tag)) nil "Tag must not be empty")
@@ -146,7 +146,7 @@ ARG is the same as in `dired-map-over-marks'."
 
 ;;;###autoload
 (defun dired-tags-mark-regexp (tag-regexp)
-  "Mark dired files by TAG-REGEXP."
+  "Mark Dired files by TAG-REGEXP."
   (interactive "sTag regexp: ")
   (let ((tag-match-p (apply-partially #'string-match-p tag-regexp)))
     (dired-mark-if
@@ -183,7 +183,7 @@ ARG is the same as in `dired-map-over-marks'."
 
 ;;;###autoload
 (defun dired-tags-edit ()
-  "Edit tags of dired file at point."
+  "Edit tags of Dired file at point."
   (interactive)
   (let ((file (dired-get-filename))
         (local-file (dired-get-filename t)))

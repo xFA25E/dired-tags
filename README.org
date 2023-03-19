@@ -1,4 +1,7 @@
 #+TITLE: Dired-Tags
+
+[[https://github.com/xFA25E/dired-tags/actions/workflows/test.yml/badge.svg]]
+
 Manage file tags using extended attributes in GNU/Emacs
 
 [[./dired-tags.png]]
