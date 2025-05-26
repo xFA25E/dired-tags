@@ -103,12 +103,16 @@
       "locked": {
         "lastModified": 1596571524,
         "narHash": "sha256-eo5aY+KYGJdgZbSTrINBx8QtELs5htWqH6o7k5yeoMQ=",
-        "type": "tarball",
-        "url": "https://git.savannah.gnu.org/cgit/emacs.git/snapshot/emacs-emacs-27.1.tar.gz"
+        "owner": "emacs-mirror",
+        "repo": "emacs",
+        "rev": "86d8d76aa36037184db0b2897c434cdaab1a9ae8",
+        "type": "github"
       },
       "original": {
-        "type": "tarball",
-        "url": "https://git.savannah.gnu.org/cgit/emacs.git/snapshot/emacs-emacs-27.1.tar.gz"
+        "owner": "emacs-mirror",
+        "ref": "emacs-27.1",
+        "repo": "emacs",
+        "type": "github"
       }
     },
     "epkg-xattr": {
@@ -128,11 +132,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1748256436,
-        "narHash": "sha256-KcgUlj8E3ilw8sHmTSVe+/6jz+8hgJSMA/Y5n+9Fh1I=",
+        "lastModified": 1748260712,
+        "narHash": "sha256-nrIFbh5tnaIZvxVWXy7d8p0+UNXyuaRt55lpNwZ+3j8=",
         "owner": "xFA25E",
         "repo": "xattr",
-        "rev": "e9fdf172066d6915d0a83e86a1e245aa6f866346",
+        "rev": "221a88d695af0b819f344e8a5fc82ca4ca0cc4a7",
         "type": "github"
       },
       "original": {
