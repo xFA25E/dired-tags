@@ -7,7 +7,7 @@
   meta = inputs.cells.automation.lib;
   epkgs =
     ((nixpkgs.appendOverlays [inputs.emacs-overlay.overlay]).emacsPackagesFor nixpkgs.emacs)
-    .overrideScope' (
+    .overrideScope (
       efinal: eprev: {
         xattr = inputs.epkg-xattr.packages.default;
       }
