@@ -23,6 +23,6 @@ jobs:
     - name: Run nix check
       run: nix --extra-experimental-features "nix-command flakes" flake check
     - name: Install eldev dependencies
-      run: git clone "https://github.com/xFA25E/xattr" && (cd xattr && nix --extra-experimental-features "nix-command flakes" develop -c make) && echo "(eldev-use-local-dependency \"$(pwd)/xattr\")" >Eldev-local
+      run: git clone "https://github.com/xFA25E/xattr" && (cd xattr && nix --extra-experimental-features "nix-command flakes" develop -c make) && echo "(eldev-use-local-sources \"$(pwd)/xattr\") (eldev-add-extra-dependencies 'test 'xattr)" >Eldev-local
     - name: Run tests
       run: nix --extra-experimental-features "nix-command flakes" develop -c eldev --unstable -p -d -t -T test
